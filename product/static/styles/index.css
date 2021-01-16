@@ -111,3 +111,11 @@ section {
     margin: 0 5px;
     cursor: pointer;
 }
+
+.success {
+    text-align: center;
+    color: lightseagreen;
+    text-decoration: underline;
+    font-size: 2em;
+
+}
