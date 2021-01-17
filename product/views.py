@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo, Book
 # Create your views here.
 
@@ -27,3 +27,11 @@ def test(request):
 def books(request):
     books_list = Book.objects.all()
     return render(request, "books.html", {"books_list": books_list})
+
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]
+    todo = ToDo(text=text)
+    todo.save()
+    return redirect(test)
