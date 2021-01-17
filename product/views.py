@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ToDo
+from .models import ToDo, Book
 # Create your views here.
 
 
@@ -22,3 +22,8 @@ def delete(request):
 def test(request):
     todo_list = ToDo.objects.all()
     return render(request, "test.html", {"todo_list": todo_list})
+
+
+def books(request):
+    books_list = Book.objects.all()
+    return render(request, "books.html", {"books_list": books_list})
