@@ -8,7 +8,12 @@
 </head>
 
 <body>
-
+    {% for book in books_list %}
+    <h3 style="color: red;">{{ book.title }}</h3>
+    <h4>{{ book.subtitle }}</h4>
+    <p>{{book.description}}</p>
+    <p>Стоимость - {{book.price}}$</p>
+    {% endfor %}
 </body>
 
 </html>
