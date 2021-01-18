@@ -8,6 +8,20 @@
 </head>
 
 <body>
+
+
+    <form action="{% url 'add_book' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="title - заголовок" name="title"> <br>
+        <input type="text" placeholder="subtitle - подзаголовок" name="subtitle"> <br>
+        <input type="text" placeholder="description - Описание" name="description"> <br>
+        <input type="text" placeholder="price - цена" name="price"> <br>
+        <input type="text" placeholder="genre - жанр" name="genre"> <br>
+        <input type="text" placeholder="author - автор" name="author"> <br>
+        <input type="number" placeholder="year - год" name="year"><br>
+        <button>Добавить книгу</button>
+    </form>
+
     {% for book in books_list %}
     <h3 style="color: red;">{{ book.title }}</h3>
     <h4>{{ book.subtitle }}</h4>
