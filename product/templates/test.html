@@ -32,10 +32,14 @@
                 {% endif %} ">
                 <div class="todo_item_header">
                     <label class="checkbox_container">
-                        <input type="checkbox">
+                        <input type="checkbox" {% if todo.is_closed %} checked {% endif %}>
                         <span class="checkmark"></span>
                     </label>
-                    <h4>{{ todo.text }}</h4>
+                    <h4>
+                        <a href="{% url 'close-todo' todo.id %}">
+                            {{ todo.text }}
+                        </a>
+                    </h4>
                 </div>
                 <div class="todo_item_footer">
                     <p>{{todo.created_at}} <span>17:22</span></p>
