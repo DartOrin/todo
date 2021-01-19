@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,17 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}">
 </head>
 
 <body>
-    <p>Название: {{ book.title }}</p>
-    <p>Подзаголовок: {{ book.subtitle }}</p>
-    <p>Описание: {{ book.description }}</p>
-    <p>Цена: {{ book.price }}</p>
-    <p>Жанр: {{ book.genre }}</p>
-    <p>Автор: {{ book.author }}</p>
-    <p>Год выхода книги: {{ book.year }}</p>
-    <p>Добавление книги на сайт: {{ book.date }}</p>
+    <div class="content">
+        <p>Название: {{ book.title }}</p>
+        <p>Подзаголовок: {{ book.subtitle }}</p>
+        <p>Описание: {{ book.description }}</p>
+        <p>Жанр: {{ book.genre }}</p>
+        <p>Автор: {{ book.author }}</p>
+        <p>Год выхода книги: {{ book.year }}</p>
+        <p>Добавление книги на сайт: {{ book.date }}</p>
+        <p>Цена: {{ book.price }}</p>
+    </div>
 
 
 </body>
