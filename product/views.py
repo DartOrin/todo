@@ -70,3 +70,23 @@ def unmark_todo(request, id):
     todo.is_favorite = False
     todo.save()
     return redirect(test)
+
+
+def mark_book(request, id):
+    book = Book.objects.get(id=id)
+    book.is_favorites = True
+    book.save()
+    return redirect(books)
+
+
+def unmark_book(request, id):
+    book = Book.objects.get(id=id)
+    book.is_favorites = False
+    book.save()
+    return redirect(books)
+
+
+def delete_book(request, id):
+    book = Book.objects.get(id=id)
+    book.delete()
+    return redirect(books)

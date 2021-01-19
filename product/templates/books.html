@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
+    <link rel="stylesheet" href="{% static 'styles/books.css' %}">
 </head>
 
 <body>
@@ -22,12 +24,23 @@
         <button>Добавить книгу</button>
     </form>
 
-    {% for book in books_list %}
-    <h3 style="color: red;">{{ book.title }}</h3>
-    <h4>{{ book.subtitle }}</h4>
-    <p>{{book.description}}</p>
-    <p>Стоимость - {{book.price}}$</p>
-    {% endfor %}
+    <div class="book-container">
+        {% for book in books_list %}
+        <div class="book-item">
+            <h3>{{ book.title }}</h3>
+            <h4>{{ book.subtitle }}</h4>
+            <p>Стоимость - {{book.price}}$</p>
+            <div class="action_buttons">
+                {% if book.is_favorites %}
+                <a href="{% url 'unmark-book' book.id %}"><img src="{% static './icons/marked.png' %}" alt="photo"></a>
+                {% else %}
+                <a href="{% url 'mark-book' book.id %}"><img src="{% static './icons/unmarked.png' %}" alt="photo"></a>
+                {%endif%}
+                <a href="{% url 'delete-book' book.id %}"><img src="{% static './icons/delete.png' %}" alt="photo"></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 
 </html>

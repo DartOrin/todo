@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.book-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.book-item {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: seashell;
+    padding: 10px;
+}
+
+.book-item h3 {
+    color: red;
+}
+
+form {
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.action_buttons a img {
+    width: 30px;
+    height: 30px;
+}
