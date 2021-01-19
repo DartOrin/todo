@@ -38,8 +38,11 @@
                 {%endif%}
                 <a href="{% url 'delete-book' book.id %}"><img src="{% static './icons/delete.png' %}" alt="photo"></a>
             </div>
+            <a href="{% url 'book-detail' book.id %}">Подробнее</a>
         </div>
+
         {% endfor %}
+
     </div>
 </body>
 
